@@ -1,42 +1,28 @@
 # mygit
 
-A small version control project for understanding how Git stores files,
-commits, and branches.
+Tiny Git-style version control for learning how commits, branches, and stored objects work.
 
-Data is kept in `.mygit`. Commands available:
+Data lives in `.mygit`.
 
-- `init`
-- `add`
-- `commit`
-- `status`
-- `log`
-- `branch`
-- `checkout`
-- `cat-file`
+Commands:
 
-## Try it
+- `init` create the repo
+- `add` stage files
+- `commit` save a snapshot
+- `status` show changes
+- `log` show history
+- `branch` list or create branches
+- `checkout` switch branches
+- `cat-file` print an object
+
+## Example
 
 ```bash
 node git.js init
-echo "project notes" > notes.txt
+echo "notes" > notes.txt
 node git.js add notes.txt
-node git.js commit -m "add notes"
-node git.js status
+node git.js commit -m "first commit"
 node git.js log
-```
-
-Create and switch branches:
-
-```bash
 node git.js branch work
 node git.js checkout work
 ```
-
-Inspect a stored object:
-
-```bash
-node git.js cat-file <object-id>
-```
-
-The project uses content-addressed objects, compressed storage, an index,
-commits, refs, and branches.
